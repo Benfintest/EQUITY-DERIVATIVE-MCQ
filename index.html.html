@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online MCQ Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Online MCQ Test</h1>
+
+    <form id="mcqForm">
+        <div class="question">
+            <p>1. What is the capital of France?</p>
+            <input type="radio" id="q1a" name="q1" value="a">
+            <label for="q1a">a) Paris</label><br>
+            <input type="radio" id="q1b" name="q1" value="b">
+            <label for="q1b">b) London</label><br>
+            <input type="radio" id="q1c" name="q1" value="c">
+            <label for="q1c">c) Rome</label><br>
+        </div>
+
+        <div class="question">
+            <p>2. What is the largest planet in our Solar System?</p>
+            <input type="radio" id="q2a" name="q2" value="a">
+            <label for="q2a">a) Earth</label><br>
+            <input type="radio" id="q2b" name="q2" value="b">
+            <label for="q2b">b) Jupiter</label><br>
+            <input type="radio" id="q2c" name="q2" value="c">
+            <label for="q2c">c) Mars</label><br>
+        </div>
+
+        <div class="question">
+            <p>3. What is 2 + 2?</p>
+            <input type="radio" id="q3a" name="q3" value="a">
+            <label for="q3a">a) 3</label><br>
+            <input type="radio" id="q3b" name="q3" value="b">
+            <label for="q3b">b) 4</label><br>
+            <input type="radio" id="q3c" name="q3" value="c">
+            <label for="q3c">c) 5</label><br>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculateScore() {
+            var score = 0;
+            var totalQuestions = 3;
+
+            // Check answers for each question
+            if (document.getElementById('q1a').checked) { score++; }
+            if (document.getElementById('q2b').checked) { score++; }
+            if (document.getElementById('q3b').checked) { score++; }
+
+            // Display the result
+            var resultText = 'Your score is ' + score + ' out of ' + totalQuestions;
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+
+</body>
+</html>
